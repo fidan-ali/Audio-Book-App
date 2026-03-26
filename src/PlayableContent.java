@@ -1,2 +1,2 @@
-public class PlayableContent {
+public interface PlayableContent {
 }

@@ -1,2 +1,2 @@
-public class MusicContent {
+public interface MusicContent {
 }
