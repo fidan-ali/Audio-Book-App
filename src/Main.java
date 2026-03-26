@@ -1,15 +1,54 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import Model.*;
+import Service.*;
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        AudioBook book = new AudioBook(
+                "Harry Potter",
+                "J.K. Rowling",
+                3600,
+                "Jim Dale",
+                "Bloomsbury",
+                1997
+        );
+        Song song = new Song(
+                "Shape of You",
+                "Ed Sheeran",
+                240,
+                "Ed Sheeran",
+                "Divide",
+                "Pop"
+        );
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        User user = new User(1, "Fidan", "fidan@example.com", "1234");
+
+        AudioBookPlayer player = new AudioBookPlayer();
+        // PLAY AUDIOBOOK
+        player.setContent(book);   // load audiobook
+        player.play();             // play
+        player.pause();            // pause
+        player.resume();           // resume
+        player.stop();             // stop
+
+        user.addToListeningHistory(book);
+        user.saveContent(book);
+
+        // PLAY SONG
+        player.setContent(song);   // switch to song
+        player.play();
+        player.pause();
+        player.resume();
+        player.stop();
+
+        user.addToListeningHistory(song);
+
+        // SHOW USER DATA
+        System.out.println("\nSaved Content:");
+        for (Media m : user.getSavedContent()) {
+            m.displayInfo();
+        }
+        System.out.println("\nListening History:");
+        for (Media m : user.getListeningHistory()) {
+            m.displayInfo();
         }
     }
 }

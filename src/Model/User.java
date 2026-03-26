@@ -12,13 +12,11 @@ public class User {
     private List<Media> savedContent = new ArrayList<>();
     private List<Media> listeningHistory = new ArrayList<>();
 
-    public User(int userId, String name, String email, String password, List<Media> savedContent, List<Media> listeningHistory) {
+    public User(int userId, String name, String email, String password) {
         this.userId = userId;
         this.name = name;
         this.email = email;
         this.password = password;
-        this.savedContent = savedContent;
-        this.listeningHistory = listeningHistory;
     }
     //GETTERS
     public int getUserId() {
