@@ -5,7 +5,7 @@ import Interfaces.PlayableContent;
 public class AudioBookPlayer {
         private PlayableContent currentContent;//Song or AudioBook
         public void setContent(PlayableContent content){
-                this.currentContent = currentContent;
+                this.currentContent = content;
         }
 
         public void play(){

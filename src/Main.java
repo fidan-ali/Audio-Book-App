@@ -23,17 +23,17 @@ public class Main {
 
         AudioBookPlayer player = new AudioBookPlayer();
         // PLAY AUDIOBOOK
-        player.setContent(book);   // load audiobook
-        player.play();             // play
-        player.pause();            // pause
-        player.resume();           // resume
-        player.stop();             // stop
+        player.setContent(book);
+        player.play();
+        player.pause();
+        player.resume();
+        player.stop();
 
         user.addToListeningHistory(book);
         user.saveContent(book);
 
         // PLAY SONG
-        player.setContent(song);   // switch to song
+        player.setContent(song);
         player.play();
         player.pause();
         player.resume();
