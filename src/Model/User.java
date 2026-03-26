@@ -70,9 +70,9 @@ public class User {
     }
 
     public void saveContent(Media media){
-
+        savedContent.add(media);
     }
     public void addToListeningHistory(Media media){
-
+        listeningHistory.add(media);
     }
 }
